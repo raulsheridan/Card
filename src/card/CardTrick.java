@@ -11,6 +11,7 @@ import java.util.Random;
 /**
  *
  * @author 16474
+ *@modifier Raul Desai 991711911
  */
 public class CardTrick {
 
