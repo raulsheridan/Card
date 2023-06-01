@@ -4,7 +4,7 @@
  */
 package card;
 
-import java.util.Scanner;
+
 import java.util.Random;
 
 
@@ -31,24 +31,15 @@ public class CardTrick {
            luckyCard.setValue(9); 
            hand[0] = luckyCard;
         
-        try ( // Ask the user to pick a card
-            Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Pick a card(1-13): ");
-            int userCard = scanner.nextInt();
-            scanner.nextLine();
-            System.out.println("Enter a card suit: ");
-            String suit=scanner.nextLine();
-            
-            Card usrC1 = new Card();
-            usrC1.setSuit(suit);
-            usrC1.setValue(userCard);
+        
+           
             
             // Search for the user's card in the hand
-            boolean found = false;
-            for (Card c1 : hand) {
-                if (c1.getValue() == usrC1.getValue() && c1.getSuit().equalsIgnoreCase(usrC1.getSuit())) {
-                    found = true;
-                    break;
+           boolean found = false;
+        for (Card card : hand) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
+                found = true;
+                break;
                 }
             }
             
@@ -59,14 +50,15 @@ public class CardTrick {
                 System.out.println("Sorry, your card is not in the magic hand of random cards.");
             }
         }
+     public static Card generateHand() {
+        Random rand = new Random();
+        Card card = new Card();
+        card.setValue(rand.nextInt(13) + 1);
+        card.setSuit(card.SUITS[rand.nextInt(4)]);
+        return card;
+     
     }
     
-    public static Card generateHand(){
-        Random rand =new Random();
-        Card c1 =new Card();
-        c1.setValue(rand.nextInt(13)+1);
-        c1.setSuit(c1.SUITS[rand.nextInt(4)]);
-        return c1;
-    }
+ }
     
-}
+
