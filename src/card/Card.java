@@ -18,7 +18,8 @@ public class Card {
    private String suit; //clubs, spades, diamonds, hearts
    private int value;//1-13
 
-   public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
+   public final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
+   public final int[] values = {1,2,3,4,5,6,7,8,9,10,11,12,13};
     /**
      * @return the suit
      */
@@ -50,3 +51,4 @@ public class Card {
    
     
 }
+
