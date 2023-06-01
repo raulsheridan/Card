@@ -26,6 +26,11 @@ public class CardTrick {
             hand[i] = generateHand();
         }
         
+         Card luckyCard = new Card();
+           luckyCard.setSuit("Hearts");
+           luckyCard.setValue(9); 
+           hand[0] = luckyCard;
+        
         try ( // Ask the user to pick a card
             Scanner scanner = new Scanner(System.in)) {
             System.out.print("Pick a card(1-13): ");
